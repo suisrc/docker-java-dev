@@ -1,4 +1,4 @@
-# docker-compose -f test.yaml build
+# docker-compose -f centos.test.yaml build
 # git config --global user.name "suisrc"
 # git config --global user.email "z@suisrc.cn"
 # git clone -b  <分支> <版本库的网址> <本地目录名>
@@ -9,7 +9,7 @@ services:
   java-dev:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: centos.Dockerfile
       args:
         #LINUX_MIRRORS: mirrors.tuna.tsinghua.edu.cn
         MAVEN_URL: http://172.17.0.1:9010/github/apache-maven-3.6.2-bin.tar.gz

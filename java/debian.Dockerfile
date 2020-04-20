@@ -1,8 +1,5 @@
-# https://github.com/suisrc/docker-code-server/blob/master/debian.Dockerfile
-# https://github.com/suisrc/docker-code-server/releases
-# 
-# https://hub.docker.com/r/suisrc/vscode
-FROM suisrc/vscode:1.43.2-3.1.1-debian9
+# https://hub.docker.com/_/debian
+FROM dibian:stretch-slim
 
 # args
 ARG JAVA_RELEASE
@@ -48,10 +45,4 @@ RUN echo "**** install maven ****" &&\
     mvn -version
 
 ENV MAVEN_HOME /usr/share/maven
-
-# extension
-RUN echo "**** install code-server extension ****" && \
-    code-server --install-extension redhat.vscode-yaml &&\
-    code-server --install-extension redhat.vscode-xml &&\
-    code-server --install-extension vscjava.vscode-java-pack
 
